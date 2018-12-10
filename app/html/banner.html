@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/lib/swiper/swiper.min.css">
-    <style>
-      .swiper-container {
-            /* width: 600px; */
-            height: 300px;
-        }
-    </style>
+  <meta name="x5-orientation" content="portrait">
+  <link rel="stylesheet" href="/css/commonality.css">
+  <link rel="stylesheet" href="/lib/swiper/swiper.min.css">
+  <style>
+    .swiper-container {
+          /* width: 600px; */
+          height: 300px;
+      }
+  </style>
 </head>
 <body>
   <div class="swiper-container">
@@ -25,7 +27,9 @@
     
     <!-- 如果需要滚动条 -->
     <!-- <div class="swiper-scrollbar"></div> -->
-</div>
+  </div>
+  <div class="test"></div>
+  <p>随便写点什么吧，反正是字就可以了。想看看到底有什么样的变化，会不会很难看呀</p>
 
   <script src="/lib/swiper/swiper.min.js"></script>
   <script>        
@@ -50,5 +54,21 @@
       // },
     })        
   </script>
+
+  <!-- 改变html里面的font-size -->
+  <!-- <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+          };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script> -->
 </body>
 </html>
