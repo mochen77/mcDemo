@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>media</title>
+  <link rel="stylesheet" href="/css/media.css">
+</head>
+<body>
+  <h1>自适应椭圆</h1>
+  <p>制作一个自适应的椭圆是形状篇中最简单的图形了，简直不能再简单了。
+    众所周知，制作与圆相关的图形，用到的属性就要 border-radius 了。我们知道，border-radius可以单独指定水平和垂直半径，使用斜杠 (/) 来分开，两个值相等可以制作一个圆弧，如果不相等，便是一个椭圆弧了。
+    .demo{
+        border-radius: 100px / 75px;
+    }
+    复制代码其实border-radius是一个简写属性，我们有两种方式可以为元素的每个角指定不同的值。
+    第一种简写方式
+    .demo{
+       border-radius:10px 20px 30px 40px / 50px 60px 70px 80px;
+       /* 斜杠（/）前代表水平半径，后代表垂直半径，顺序分别为左上角开始，顺时针走向，所以这段代码表示左上角(10px/50px) 右上角（20px/60px）右下角（30px/70px）左下角（40px/80px） */
+    }
+    复制代码第二种是分开写的方式
+    .demo{
+        border-top-left-radius:10px/50px;
+        border-top-right-radius:20px/60px;
+        border-bottom-right-radius:30px/70px;
+        border-bottom-left-radius:40px/80px;
+    }
+    复制代码如果生成一个自适应的椭圆就很简单了，只要每个角的水平半径为宽的50%，垂直半径为高的50%，就ok了。
+    代码简写为：
+    .ellipse{
+        border-radius:50%;
+    }
+    复制代码平行四边形
+    平行四边形也是页面中常出现的一种图形，我们可能很容易就想到，使用skew()将矩形倾斜一定角度即可。
+    
+    .parallelograms{
+        transform: skew(-45deg);
+        /*...... */
+    }
+    复制代码可惜效果不如人意，文字也跟着倾斜了，这时候</p>
+</body>
+</html>
