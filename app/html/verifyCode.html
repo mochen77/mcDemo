@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>验证码</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/js/lib/verifyCode/verify.css">
+  <link rel="stylesheet" href="/css/verifyCode.css">
+</head>
+<body>
+  <!-- 页面 -->
+  <div class="container">
+    <div class="button">点击验证</div>
+  </div>
+  <!-- 验证码 -->
+  <div class="codeMasked">
+    <div id="mpanel4" ></div>
+  </div>
+
+  <script src="/js/lib/jquery/jquery-1.12.4.min.js"></script>
+  <script src="/js/lib/verifyCode/verify.js"></script>
+  <script>
+    function mcVerfy(){
+      var btn = $(".button"),
+          masked = $(".codeMasked");
+      //引用verify.js分装的方法
+      $('#mpanel4').slideVerify({
+        type : 2,		//类型
+        vOffset : 5,	//误差量，根据需求自行调整
+        vSpace : 5,	//间隔
+        imgName : ['1.jpg', '2.jpg'],
+        imgSize : {//图片大小
+          width: '300px',
+          height: '170px',
+        },
+        blockSize : {//拼接块大小
+          width: '30px',
+          height: '30px',
+        },
+        barSize : {//滑动块大小
+          width : '300px',
+          height : '40px',
+        },
+        ready : function() {
+      },
+        success : function(obj) {//成功的执行
+          masked.fadeOut(700,function(){obj.refresh();});
+        },
+        error : function() {
+        //alert('验证失败！');
+        }
+      });
+      /*获取验证码*/
+      btn.click(function() {
+          masked.show();
+      });
+      //退出验证码
+      masked.click(function(e){
+        if(e.target.className === "codeMasked"){
+          masked.hide();
+        };
+      });
+    }
+
+    mcVerfy();
+  </script>
+</body>
+</html>
