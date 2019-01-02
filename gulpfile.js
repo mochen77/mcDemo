@@ -25,7 +25,7 @@ gulp.task("js", function() {
 // 启动服务器
 gulp.task("connect", function() {
 	connect.server({
-		root : "app",
+		root : "",
 		port : 8080,
 		livereload : true
 	});
